@@ -6,7 +6,7 @@ After Effects スクリプトでリソース形式でUIを作る時に使うツ�
 
 ## Usage
 
-リソース記述がわからなうと使えません  
+リソース記述がわからないと使えません  
 
 公式のドキュメント  
 https://extendscript.docsforadobe.dev/user-interface-tools/resource-specifications.html#resource-specifications  
