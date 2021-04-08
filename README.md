@@ -4,6 +4,10 @@ After Effects スクリプトでリソース形式でUIを作る時に使うツ�
 僕自身リソース形式での記述がよくわからなかったので作ったものです。
   
 
+windowsのバイナリ  
+[AE_UI.zip](https://bit.ly/3uBOJIL)  
+
+
 ## Usage
 
 リソース記述がわからないと使えません  
@@ -23,7 +27,7 @@ https://sites.google.com/view/youuu4/HowToWrite?authuser=0
   
 右上のRunningで起動中のAEを選び、Sendボタンでプレビューが表示されます。  
 Fileメニューの「jsx disp」でスクリプトの内容が表示されるので、後は適当に加工してください。  
-
+  
 
 ## License
 This software is released under the MIT License, see LICENSE. 
