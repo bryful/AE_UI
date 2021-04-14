@@ -81,25 +81,25 @@ namespace AE_UI
 		{
 			InitializeComponent();
 
-			TbUIName.TextChanged += TbUIName_TextChanged;
-			PeEnabled.ValueChanged += TbUIName_TextChanged;
-			PeVisible.ValueChanged += TbUIName_TextChanged;
-			PeText.ValueChanged += TbUIName_TextChanged;
-			PeJustify.ValueChanged += TbUIName_TextChanged;
-			PeValue.ValueChanged += TbUIName_TextChanged;
-			PeImage.ValueChanged += TbUIName_TextChanged;
-			PeOrientation.ValueChanged += TbUIName_TextChanged;
-			PePreferredSize.ValueChanged += TbUIName_TextChanged;
-			PeCharacters.ValueChanged += TbUIName_TextChanged;
-			PeAlignment.ValueChanged += TbUIName_TextChanged;
-			PeAlignChildren.ValueChanged += TbUIName_TextChanged;
-			PeMargin.ValueChanged += TbUIName_TextChanged;
-			PeSpacing.ValueChanged += TbUIName_TextChanged;
-			PeIndent.ValueChanged += TbUIName_TextChanged;
+			TbUIName.TextChanged += M_ValueChanged;
+			PeEnabled.ValueChanged += M_ValueChanged;
+			PeVisible.ValueChanged += M_ValueChanged;
+			PeText.ValueChanged += M_ValueChanged;
+			PeJustify.ValueChanged += M_ValueChanged;
+			PeValue.ValueChanged += M_ValueChanged;
+			PeImage.ValueChanged += M_ValueChanged;
+			PeOrientation.ValueChanged += M_ValueChanged;
+			PePreferredSize.ValueChanged += M_ValueChanged;
+			PeCharacters.ValueChanged += M_ValueChanged;
+			PeAlignment.ValueChanged += M_ValueChanged;
+			PeAlignChildren.ValueChanged += M_ValueChanged;
+			PeMargin.ValueChanged += M_ValueChanged;
+			PeSpacing.ValueChanged += M_ValueChanged;
+			PeIndent.ValueChanged += M_ValueChanged;
 
-			PeIcon.ValueChanged += TbUIName_TextChanged;
-			PeMaximumSize.ValueChanged += TbUIName_TextChanged;
-			PeMinimumSize.ValueChanged += TbUIName_TextChanged;
+			PeIcon.ValueChanged += M_ValueChanged;
+			PeMaximumSize.ValueChanged += M_ValueChanged;
+			PeMinimumSize.ValueChanged += M_ValueChanged;
 
 
 			SetMode(CmbUIType.UIType);
@@ -113,7 +113,7 @@ namespace AE_UI
 			OnValueChanged(new EventArgs());
 		}
 
-		private void TbUIName_TextChanged(object sender, EventArgs e)
+		private void M_ValueChanged(object sender, EventArgs e)
 		{
 			OnValueChanged(new EventArgs());
 		}

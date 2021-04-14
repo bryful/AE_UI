@@ -23,14 +23,21 @@ namespace AE_UI
 				ValueChanged(this, e);
 			}
 		}
+		private string m_ValueStr = "";
+		private string m_ValueStrSet() { return string.Format("[{0},{1}]", m_num0.Value, m_num1.Value); }
 		[Category("AE")]
 		public string Value
 		{
-			get { return string.Format("[{0},{1}]", m_num0.Value, m_num0.Value); }
+			get {
+				m_ValueStr = m_ValueStrSet();
+				return m_ValueStr;
+			}
 			set
 			{
 				string s = value.Trim();
 				if (s.Length <= 2) return;
+				if (s == m_ValueStr) return;
+
 				if (s[0] == '[') s = s.Substring(1);
 				if (s[s.Length-1]==']') s = s.Substring(0,s.Length-1);
 				string[] sa = s.Split(',');
@@ -56,7 +63,10 @@ namespace AE_UI
 					}
 				}
 				refFlag = false;
-				if (b) OnValueChanged(new EventArgs());
+				if (b)
+				{
+					OnValueChanged(new EventArgs());
+				}
 
 			}
 		}
@@ -71,12 +81,14 @@ namespace AE_UI
 			m_num0.Margin = new Padding(0);
 			m_num0.Size = new Size(w, 23);
 			m_num0.Font = new Font(this.Font.FontFamily, 12f);
+			m_num0.Maximum = 65536;
 
 			m_num1.AutoSize = false;
 			m_num1.Location = new Point(w, 0);
 			m_num1.Margin = new Padding(0);
 			m_num1.Size = new Size(w, 23);
 			m_num1.Font = new Font(this.Font.FontFamily, 12f);
+			m_num1.Maximum = 65536;
 
 			this.Controls.Add(m_num0);
 			this.Controls.Add(m_num1);
@@ -89,7 +101,9 @@ namespace AE_UI
 
 		private void M_num0_ValueChanged(object sender, EventArgs e)
 		{
-			OnVisibleChanged(new EventArgs());
+			m_ValueStr = m_ValueStrSet();
+			if (refFlag) return;
+			OnValueChanged(new EventArgs());
 		}
 
 		private void ChkSize()
