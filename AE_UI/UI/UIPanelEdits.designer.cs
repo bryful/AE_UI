@@ -49,6 +49,7 @@ namespace AE_UI
 			this.PeText = new AE_UI.UIEditText();
 			this.PeValue = new AE_UI.UIEditValue();
 			this.PeVisible = new AE_UI.UIEditValue();
+			this.PeProperties = new AE_UI.UIEditProperties();
 			this.SuspendLayout();
 			// 
 			// lb
@@ -326,6 +327,18 @@ namespace AE_UI
 			this.PeVisible.Text = "uiEditValue1";
 			this.PeVisible.Value = "";
 			// 
+			// PeProperties
+			// 
+			this.PeProperties.Caption = "properties";
+			this.PeProperties.CaptionWidth = 95;
+			this.PeProperties.IsUsed = false;
+			this.PeProperties.Location = new System.Drawing.Point(0, 497);
+			this.PeProperties.Name = "PeProperties";
+			this.PeProperties.Size = new System.Drawing.Size(322, 23);
+			this.PeProperties.TabIndex = 71;
+			this.PeProperties.Text = "uiEditProperties1";
+			this.PeProperties.Value = "";
+			// 
 			// UIPanelEdits
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -350,9 +363,10 @@ namespace AE_UI
 			this.Controls.Add(this.PeText);
 			this.Controls.Add(this.PeValue);
 			this.Controls.Add(this.PeVisible);
+			this.Controls.Add(this.PeProperties);
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "UIPanelEdits";
-			this.Size = new System.Drawing.Size(328, 512);
+			this.Size = new System.Drawing.Size(328, 540);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -380,5 +394,6 @@ namespace AE_UI
 		private UIEditSize PeMaximumSize;
 		private UIEditSize PeMinimumSize;
 		private UIEditText PeIcon;
+		private UIEditProperties PeProperties;
 	}
 }

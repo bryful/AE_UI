@@ -168,6 +168,12 @@
     <Compile Include="ResultForm.Designer.cs">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UIEditBaseProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UIEditProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\UIEditBaseSize.cs">
       <SubType>Component</SubType>
     </Compile>

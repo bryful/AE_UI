@@ -583,6 +583,11 @@ private TextBox m_Debug = null;
 				if (ret != "") ret += ",";
 				ret += "visible" + ":" + prms.visible;
 			}
+			if (prms.properties != "")
+			{
+				if (ret != "") ret += ",";
+				ret += "properties" + ":" + prms.properties;
+			}
 
 
 

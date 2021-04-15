@@ -95,7 +95,8 @@ namespace AE_UI
 			"spacing",
 			"text",
 			"value",
-			"visible"
+			"visible",
+			"properties"
 		};
 		[JsonIgnore]
 		static public readonly string[] ALGN_HORTAG = new string[]
@@ -181,6 +182,7 @@ namespace AE_UI
 		public string text { get; set; }
 		public string value { get; set; }
 		public string visible { get; set; }
+		public string properties { get; set; }
 		//public 
 		public UIParams[] Items { get; set; }
 
@@ -207,6 +209,7 @@ namespace AE_UI
 			text = "";
 			value = "";
 			visible = "";
+			properties = "";
 			Items = new UIParams[0];
 		}
 		public void CopyFrom(UIParams prm)
@@ -231,6 +234,7 @@ namespace AE_UI
 			this.text = prm.text;
 			this.value = prm.value;
 			this.visible = prm.visible;
+			this.properties = prm.properties;
 
 			if (this.UIName == null) this.UIName = "";
 			if (this.alignChildren == null) this.alignChildren = "";
@@ -250,6 +254,7 @@ namespace AE_UI
 			if (this.text == null) this.text = "";
 			if (this.value == null) this.value = "";
 			if (this.visible == null) this.visible = "";
+			if (this.properties == null) this.properties = "";
 
 		}
 		static public string WAdd(string s)

@@ -256,7 +256,7 @@ namespace BRY
 			FindRunningAFX();
 
 			m_Timer.Tick += M_Timer_Tick;
-			m_Timer.Interval = 1000 * 15;
+			m_Timer.Interval = 1000 * 10;
 			m_Timer.Enabled = true;
 		}
 
@@ -656,7 +656,6 @@ namespace BRY
 			if(rf==true)
 			{
 				m_RunningAFX = lst;
-				OnRunningAFXChanged(new EventArgs());
 				int idx = -1;
 				if((pcid>0)&&(m_RunningAFX.Length>0))
 				{
@@ -675,6 +674,7 @@ namespace BRY
 					idx = m_RunningAFX.Length - 1;
 				}
 				RunningAFXIndex = idx;
+				OnRunningAFXChanged(new EventArgs());
 			}
 		}
 		// *********************************************************************************

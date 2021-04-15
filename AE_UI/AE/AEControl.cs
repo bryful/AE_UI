@@ -55,6 +55,7 @@ namespace AE_Util_skelton
 		{
 			get { return NFsAE.InstalledCount; }
 		}
+		[Category("AE")]
 		public string[] InstalledAFX
 		{
 			get
@@ -124,20 +125,81 @@ namespace AE_Util_skelton
 				return NFsAE.AerenderPath;
 			}
 		}
+		[Category("AE")]
+		public int RunningAFXIndex
+		{
+			get { return NFsAE.RunningAFXIndex; }
+			set
+			{
+				if (NFsAE.RunningAFXIndex !=value)
+				{
+					NFsAE.RunningAFXIndex = value;
+				}
+			}
+		}
+		[Category("AE")]
+		public bool InstalldIsShow
+		{
+			get { return m_CombInstalled.Visible; }
+			set
+			{
+				m_CombInstalled.Visible = value;
+				lbInstalled.Visible = value;
+				m_BtnRun.Visible = value;
+				ChkSize();
 
+			}
+		}
+		[Category("AE")]
+		public bool RunningIsShow
+		{
+			get { return m_CombRunning.Visible; }
+			set
+			{
+				m_CombRunning.Visible = value;
+				lbRunning.Visible = value;
+				ChkSize();
+			}
+		}
+		[Category("AE")]
+		public bool WindowsIsShow
+		{
+			get { return m_BtnMax.Visible; }
+			set
+			{
+				m_BtnMax.Visible = value;
+				m_BtnMin.Visible = value;
+				lbWindow.Visible = value;
+				ChkSize();
+
+			}
+		}
+		[Category("AE")]
+		public bool ScriptIsShow
+		{
+			get { return m_BtnScript.Visible; }
+			set
+			{
+				m_BtnScript.Visible = value;
+				lbScript.Visible = value;
+				ChkSize();
+
+			}
+		}
 		// ******************************************************************************
-		private Label label1 = new Label();
+		private Label lbInstalled = new Label();
 		private ComboBox m_CombInstalled = new ComboBox();
 		private Button m_BtnRun = new Button();
-		private Label label2 = new Label();
+		private Label lbRunning = new Label();
 		private ComboBox m_CombRunning = new ComboBox();
 		private Button m_BtnMax = new Button();
 		private Button m_BtnMin = new Button();
-		private Label label3 = new Label();
-		private Label label4 = new Label();
+		private Label lbWindow = new Label();
 
+		private Label lbScript = new Label();
 		private Button m_BtnScript = new Button();
 
+		[Category("AE")]
 		public string ScriptCode { get; set; }
 		// ****************************************************************************
 		public AEControl()
@@ -163,7 +225,7 @@ namespace AE_Util_skelton
 			m_BtnRun.Location = new Point(x, y1);
 			m_BtnRun.Size = new Size(40, 23);
 			m_BtnRun.Text = "Run";
-			x += m_BtnRun.Width;
+			x += m_BtnRun.Width+ 5;
 
 			m_CombRunning.Location = new Point(x, y1+2);
 			m_CombRunning.Size = new Size(60, 20);
@@ -184,35 +246,35 @@ namespace AE_Util_skelton
 			m_BtnScript.Text = "Send";
 			x += m_BtnMin.Width;
 
-			label1.AutoSize = false;
-			label1.Location = new Point(m_CombInstalled.Left, y0);
-			label1.Size = new Size(100, 12);
-			label1.Text = "Installed";
-			label1.TextAlign = ContentAlignment.BottomLeft;
+			lbInstalled.AutoSize = false;
+			lbInstalled.Location = new Point(m_CombInstalled.Left, y0);
+			lbInstalled.Size = new Size(100, 12);
+			lbInstalled.Text = "Installed";
+			lbInstalled.TextAlign = ContentAlignment.BottomLeft;
 
-			label2.AutoSize = false;
-			label2.Location = new Point(m_CombRunning.Left, y0);
-			label2.Size = new Size(60, 12);
-			label2.Text = "Running";
-			label2.TextAlign = ContentAlignment.BottomLeft;
+			lbRunning.AutoSize = false;
+			lbRunning.Location = new Point(m_CombRunning.Left, y0);
+			lbRunning.Size = new Size(60, 12);
+			lbRunning.Text = "Running";
+			lbRunning.TextAlign = ContentAlignment.BottomLeft;
 
-			label3.AutoSize = false;
-			label3.Location = new Point(m_BtnMax.Left, y0);
-			label3.Size = new Size(60, 12);
-			label3.Text = "Window";
-			label3.TextAlign = ContentAlignment.BottomLeft;
+			lbWindow.AutoSize = false;
+			lbWindow.Location = new Point(m_BtnMax.Left, y0);
+			lbWindow.Size = new Size(60, 12);
+			lbWindow.Text = "Window";
+			lbWindow.TextAlign = ContentAlignment.BottomLeft;
 
-			label4.AutoSize = false;
-			label4.Location = new Point(m_BtnScript.Left, y0);
-			label4.Size = new Size(60, 12);
-			label4.Text = "Script";
-			label4.TextAlign = ContentAlignment.BottomLeft;
+			lbScript.AutoSize = false;
+			lbScript.Location = new Point(m_BtnScript.Left, y0);
+			lbScript.Size = new Size(60, 12);
+			lbScript.Text = "Script";
+			lbScript.TextAlign = ContentAlignment.BottomLeft;
 
 
-			this.Controls.Add(label1);
-			this.Controls.Add(label2);
-			this.Controls.Add(label3);
-			this.Controls.Add(label4);
+			this.Controls.Add(lbInstalled);
+			this.Controls.Add(lbRunning);
+			this.Controls.Add(lbWindow);
+			this.Controls.Add(lbScript);
 			this.Controls.Add(m_CombInstalled);
 			this.Controls.Add(m_BtnRun);
 			this.Controls.Add(m_CombRunning);
@@ -249,13 +311,14 @@ namespace AE_Util_skelton
 				}
 				m_CombRunning.SelectedIndexChanged += M_CombRunning_SelectedIndexChanged;
 			}
-			m_BtnMax.Enabled = false;
+			m_BtnMax.Enabled = (m_CombRunning.SelectedIndex>=0);
 			m_BtnMax.Click += M_BtnMax_Click;
-			m_BtnMin.Enabled = false;
+			m_BtnMin.Enabled = (m_CombRunning.SelectedIndex >= 0);
 			m_BtnMin.Click += M_BtnMin_Click;
-			m_BtnScript.Enabled = false;
+			m_BtnScript.Enabled = (m_CombRunning.SelectedIndex >= 0);
 			m_BtnScript.Click += M_BtnScript_Click; ;
 
+			ChkSize();
 		}
 
 		// ****************************************************************************
@@ -273,6 +336,34 @@ namespace AE_Util_skelton
 
 		}
 		// ******************************************************************************
+		public void ChkSize()
+		{
+			int x = 0;
+			if (InstalldIsShow)
+			{
+				x += m_BtnRun.Left + m_BtnRun.Width + 5;
+			}
+			if(RunningIsShow)
+			{
+				lbRunning.Left = x;
+				m_CombRunning.Left = x;
+				x += m_CombRunning.Width + 5;
+			}
+			if (WindowsIsShow)
+			{
+				lbWindow.Left = x;
+				m_BtnMax.Left = x;
+				x += m_BtnMax.Width + 3;
+				m_BtnMin.Left = x;
+				x += m_BtnMin.Width + 5;
+			}
+			if (ScriptIsShow)
+			{
+				lbScript.Left = x;
+				m_BtnScript.Left = x;
+			}
+		}
+		// ******************************************************************************
 		private void NFsAE_RunningAFXIndexChanged(object sender, EventArgs e)
 		{
 			OnRunningAFXIndexChanged(new EventArgs());
@@ -287,12 +378,14 @@ namespace AE_Util_skelton
 		// ******************************************************************************
 		private void NFsAE_RunningAFXChanged(object sender, EventArgs e)
 		{
+
 			if (m_CombRunning != null)
 			{
 				m_CombRunning.Items.Clear();
 				m_CombRunning.Items.AddRange(NFsAE.RunningAFXStr);
-				int idx = m_CombRunning.SelectedIndex;
-				bool ok = ((idx >= 0) && (idx < NFsAE.InstalledCount));
+				int idx = NFsAE.RunningAFXIndex;
+				m_CombRunning.SelectedIndex = idx;
+				bool ok = ((idx >= 0) && (idx < NFsAE.RunningCount));
 				m_BtnMax.Enabled = ok;
 				m_BtnMin.Enabled = ok;
 				m_BtnScript.Enabled = ok;

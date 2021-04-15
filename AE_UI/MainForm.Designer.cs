@@ -197,14 +197,19 @@ namespace AE_UI
 			// 
 			// aeControl1
 			// 
-			this.aeControl1.InstalledAFXIndex = -1;
-			this.aeControl1.InstalledAFXStr = "";
+			this.aeControl1.InstalldIsShow = true;
+			this.aeControl1.InstalledAFXIndex = 3;
+			this.aeControl1.InstalledAFXStr = "2021";
 			this.aeControl1.Location = new System.Drawing.Point(273, 27);
 			this.aeControl1.Name = "aeControl1";
+			this.aeControl1.RunningAFXIndex = 0;
+			this.aeControl1.RunningIsShow = true;
 			this.aeControl1.ScriptCode = null;
+			this.aeControl1.ScriptIsShow = true;
 			this.aeControl1.Size = new System.Drawing.Size(330, 35);
 			this.aeControl1.TabIndex = 12;
 			this.aeControl1.Text = "aeControl1";
+			this.aeControl1.WindowsIsShow = true;
 			// 
 			// uiPanelEdits1
 			// 
@@ -213,7 +218,7 @@ namespace AE_UI
 			this.uiPanelEdits1.Location = new System.Drawing.Point(266, 87);
 			this.uiPanelEdits1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.uiPanelEdits1.Name = "uiPanelEdits1";
-			this.uiPanelEdits1.Size = new System.Drawing.Size(337, 397);
+			this.uiPanelEdits1.Size = new System.Drawing.Size(337, 424);
 			this.uiPanelEdits1.TabIndex = 2;
 			// 
 			// uiTree1
@@ -230,7 +235,7 @@ namespace AE_UI
 			this.uiTree1.MoveUpBtn = this.btnUP;
 			this.uiTree1.Name = "uiTree1";
 			this.uiTree1.PanelEdit = this.uiPanelEdits1;
-			this.uiTree1.Size = new System.Drawing.Size(248, 397);
+			this.uiTree1.Size = new System.Drawing.Size(248, 424);
 			this.uiTree1.TabIndex = 1;
 			this.uiTree1.UIAddBtn = this.uiAddBtn1;
 			// 
@@ -239,7 +244,7 @@ namespace AE_UI
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(614, 496);
+			this.ClientSize = new System.Drawing.Size(614, 523);
 			this.Controls.Add(this.uiAddBtn1);
 			this.Controls.Add(this.aeControl1);
 			this.Controls.Add(this.btnDown);

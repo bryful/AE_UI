@@ -46,6 +46,7 @@ namespace AE_UI
 			ret.indent = PeIndent.Value;
 			ret.minimumSize = PeMinimumSize.Value;
 			ret.maximumSize = PeMaximumSize.Value;
+			ret.properties = PeProperties.Value;
 
 			return ret;
 		}
@@ -72,6 +73,7 @@ namespace AE_UI
 			PeMaximumSize.Value = value.maximumSize;
 			PeMinimumSize.Value = value.minimumSize;
 			PeIcon.Value = value.icon;
+			PeProperties.Value = value.properties;
 
 			refFlag = false;
 
@@ -100,6 +102,7 @@ namespace AE_UI
 			PeIcon.ValueChanged += M_ValueChanged;
 			PeMaximumSize.ValueChanged += M_ValueChanged;
 			PeMinimumSize.ValueChanged += M_ValueChanged;
+			PeProperties.ValueChanged += M_ValueChanged;
 
 
 			SetMode(CmbUIType.UIType);
@@ -140,6 +143,7 @@ namespace AE_UI
 					PeText.Visible = true;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.Group:
 					PeAlignChildren.Visible = true;
@@ -158,6 +162,7 @@ namespace AE_UI
 					PeText.Visible = false;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.Button:
 				case UIType.EditText:
@@ -177,6 +182,7 @@ namespace AE_UI
 					PeText.Visible = true;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.Scrollbar:
 					PeAlignChildren.Visible = false;
@@ -198,6 +204,7 @@ namespace AE_UI
 
 					PeValue.IsBool =false;
 
+					PeProperties.Visible = true;
 					break;
 				case UIType.Progressbar:
 				case UIType.Slider:
@@ -219,6 +226,7 @@ namespace AE_UI
 					PeVisible.Visible = true;
 
 					PeValue.IsBool = false;
+					PeProperties.Visible = true;
 
 					break;
 				case UIType.TreeView:
@@ -239,6 +247,7 @@ namespace AE_UI
 					PeText.Visible = false;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.RadioButton:
 					PeAlignChildren.Visible = false;
@@ -259,6 +268,7 @@ namespace AE_UI
 					PeVisible.Visible = true;
 
 					PeValue.IsBool = true;
+					PeProperties.Visible = true;
 
 					break;
 				case UIType.DropDownList:
@@ -278,6 +288,7 @@ namespace AE_UI
 					PeText.Visible = true;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.StaticText:
 					PeAlignChildren.Visible = false;
@@ -296,6 +307,7 @@ namespace AE_UI
 					PeText.Visible = true;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.Checkbox:
 					PeAlignChildren.Visible = false;
@@ -315,6 +327,7 @@ namespace AE_UI
 					PeValue.Visible = true;
 					PeVisible.Visible = true;
 
+					PeProperties.Visible = true;
 					PeValue.IsBool = true;
 
 					break;
@@ -335,6 +348,7 @@ namespace AE_UI
 					PeText.Visible = false;
 					PeValue.Visible = false;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 				case UIType.IconButton:
 					PeAlignChildren.Visible = false;
@@ -353,6 +367,7 @@ namespace AE_UI
 					PeText.Visible = false;
 					PeValue.Visible = true;
 					PeVisible.Visible = true;
+					PeProperties.Visible = true;
 					break;
 			}
 			ChkLoc();
